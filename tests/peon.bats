@@ -114,7 +114,7 @@ JSON
   cat > "$TEST_DIR/config.json" <<'JSON'
 {
   "active_pack": "peon", "volume": 0.5, "enabled": true,
-  "categories": { "greeting": false }
+  "categories": { "session.start": false }
 }
 JSON
   run_peon '{"hook_event_name":"SessionStart","cwd":"/tmp/myproject","session_id":"s1","permission_mode":"default"}'
@@ -228,7 +228,7 @@ JSON
   cat > "$TEST_DIR/config.json" <<'JSON'
 {
   "active_pack": "peon", "volume": 0.5, "enabled": true,
-  "categories": { "annoyed": false },
+  "categories": { "user.spam": false },
   "annoyed_threshold": 3, "annoyed_window_seconds": 10
 }
 JSON
@@ -358,6 +358,47 @@ JSON
   run_peon '{"hook_event_name":"Notification","notification_type":"permission_prompt","cwd":"/tmp/myproject","session_id":"s1","permission_mode":"default"}'
   [ "$PEON_EXIT" -eq 0 ]
   ! afplay_was_called
+}
+
+# ============================================================
+# desktop_notifications config
+# ============================================================
+
+@test "desktop_notifications false suppresses notification but plays sound" {
+  # Set desktop_notifications to false
+  /usr/bin/python3 -c "
+import json
+c = json.load(open('$TEST_DIR/config.json'))
+c['desktop_notifications'] = False
+json.dump(c, open('$TEST_DIR/config.json', 'w'), indent=2)
+"
+  run_peon '{"hook_event_name":"Stop","cwd":"/tmp/myproject","session_id":"s1","permission_mode":"default"}'
+  [ "$PEON_EXIT" -eq 0 ]
+  # Sound should still play even with notifications disabled
+  afplay_was_called
+  # Verify config still has desktop_notifications=false (wasn't reset)
+  val=$(/usr/bin/python3 -c "import json; print(json.load(open('$TEST_DIR/config.json')).get('desktop_notifications', True))")
+  [ "$val" = "False" ]
+}
+
+@test "--notifications-off updates config" {
+  run bash "$PEON_SH" --notifications-off
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"desktop notifications off"* ]]
+  # Verify config was updated
+  val=$(/usr/bin/python3 -c "import json; print(json.load(open('$TEST_DIR/config.json')).get('desktop_notifications', True))")
+  [ "$val" = "False" ]
+}
+
+@test "--notifications-on updates config" {
+  # First turn off
+  bash "$PEON_SH" --notifications-off
+  # Then turn on
+  run bash "$PEON_SH" --notifications-on
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"desktop notifications on"* ]]
+  val=$(/usr/bin/python3 -c "import json; print(json.load(open('$TEST_DIR/config.json')).get('desktop_notifications', True))")
+  [ "$val" = "True" ]
 }
 
 # ============================================================
