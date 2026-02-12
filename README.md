@@ -111,6 +111,7 @@ peon-ping works with any agentic IDE that supports hooks. Adapters translate IDE
 | `peon_fr` | Orc Peon (Warcraft III, French) | "Prêt à travailler?", "Travail, travail.", "D'accord." | [@thomasKn](https://github.com/thomasKn) |
 | `peon_cz` | Orc Peon (Warcraft III, Czech) | "Práce, práce.", "Připraven k práci.", "Co chceš?" | [@vojtabiberle](https://github.com/vojtabiberle) |
 | `peon_pl` | Orc Peon (Warcraft III, Polish) | Polish voice lines | [@ArturSkowronski](https://github.com/ArturSkowronski) |
+| `peon_de` | Orc Peon (Warcraft III, German) | "Arbeit, Arbeit.", "Bereit zur Arbeit!", "Was ihr wolle?" | [@Kaffeetasse](https://github.com/Kaffeetasse) |
 | `peasant` | Human Peasant (Warcraft III) | "Yes, milord?", "Job's done!", "Ready, sir." | [@thomasKn](https://github.com/thomasKn) |
 | `peasant_cz` | Human Peasant (Warcraft III, Czech) | "Ano, pane?", "Zase práce?", "Tak já teda jdu!" | [@vojtabiberle](https://github.com/vojtabiberle) |
 | `peasant_es` | Campesino Humano (Warcraft III, Spanish) | "¿Sí, mi lord?", "¡A trabajar!", "Siiii, mi señor." | [@Keralin](https://github.com/Keralin) |

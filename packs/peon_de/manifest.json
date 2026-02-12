@@ -1,0 +1,61 @@
+{
+  "name": "peon_de",
+  "display_name": "Orc Peon (DE)",
+  "categories": {
+    "greeting": {
+      "sounds": [
+        { "file": "PeonReady1.wav", "line": "Bereit zur Arbeit!" },
+        { "file": "PeonWhat1.wav", "line": "Ja?" },
+        { "file": "PeonWhat3.wav", "line": "Was ihr wolle?" }
+      ]
+    },
+    "acknowledge": {
+      "sounds": [
+        { "file": "PeonYes1.wav", "line": "Das kann ich." },
+        { "file": "PeonYes2.wav", "line": "Aber gern." },
+        { "file": "PeonYes3.wav", "line": "Arbeit, Arbeit." },
+        { "file": "PeonYes4.wav", "line": "Alles klaar." },
+        { "file": "PeonYesAttack1.wav", "line": "Ist gut." },
+        { "file": "PeonYesAttack2.wav", "line": "Schnappt sie!" },
+        { "file": "PeonYesAttack3.wav", "line": "Ich Versuchs." }
+      ]
+    },
+    "complete": {
+      "sounds": [
+        { "file": "PeonReady1.wav", "line": "Bereit zur Arbeit!" },
+        { "file": "PeonWhat4.wav", "line": "Muss was getan werden?" },
+        { "file": "PeonYes1.wav", "line": "Das kann ich." },
+        { "file": "PeonYes2.wav", "line": "Aber gern." },
+        { "file": "PeonYes3.wav", "line": "Arbeit, Arbeit." },
+        { "file": "PeonYesAttack1.wav", "line": "Ist gut." },
+        { "file": "PeonYesAttack3.wav", "line": "Ich Versuchs." }
+      ]
+    },
+    "error": {
+      "sounds": [
+        { "file": "PeonPissed4.wav", "line": "Für was fürn Ork ihr mir halten?" },
+        { "file": "PeonDeath.wav", "line": "Ugh." }
+      ]
+    },
+    "permission": {
+      "sounds": [
+        { "file": "PeonWhat4.wav", "line": "Muss was getan werden?" },
+        { "file": "PeonWhat2.wav", "line": "Hmm?" },
+        { "file": "PeonWhat3.wav", "line": "Was ihr wolle?" },
+        { "file": "PeonWhat1.wav", "line": "Ja?" }
+      ]
+    },
+    "resource_limit": {
+      "sounds": [
+        { "file": "PeonWarcry1.wav", "line": "Warum nicht?" }
+      ]
+    },
+    "annoyed": {
+      "sounds": [
+        { "file": "PeonPissed1.wav", "line": "Waaas?" },
+        { "file": "PeonPissed2.wav", "line": "Ich beschäftig mich in Ruhe lassen!" },
+        { "file": "PeonPissed3.wav", "line": "Keine Zeit zum Spielen." }
+      ]
+    }
+  }
+}
